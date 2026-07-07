@@ -1,19 +1,20 @@
 # connectpt_dataset_prep
 
-Builds and audits real-morphology ConnectPT training samples.
+Small dataset-builder wrapper for ConnectPT experiments. It selects city sets, runs controlled preparation jobs, and leaves outputs for downstream route-generation training/evaluation.
 
-## Scheme
+## System Map
 
 ```mermaid
 flowchart LR
-    A[Inputs] --> B[Run: cli.py]
-    B --> C[Checked outputs]
-    C --> D[Paper / thesis use]
+    CITIES[city_sets.py] --> CLI[cli.py]
+    CLI --> FETCH[input collection]
+    FETCH --> BUILD[dataset assembly]
+    BUILD --> OUT[ConnectPT-ready exports]
 ```
 
-## Main Result
+## Main Image
 
-![Main result](docs/readme_result.svg)
+![ConnectPT dataset preparation flow](docs/readme_project_map.svg)
 
 ## Run
 
@@ -22,17 +23,15 @@ Entrypoint: `cli.py`
 Human:
 
 ```bash
-PYTHONPATH=$PWD python -m connectpt_dataset_prep.cli status
+uv run python cli.py --help
 ```
 
-Agent:
-
-Run status/analyze after rebuild and inspect manifest plus analysis PNGs.
+Agent: check selected city set and output manifest before running a long build; do not overwrite existing datasets unless the command explicitly says so.
 
 ## Publication
 
-No standalone publication yet.
+No standalone publication; support repo for ConnectPT dissertation experiments.
 
 ## Next Steps / Heuristics
 
-Heuristic: skip cities without valid gravity OD instead of silently falling back.
+Heuristic: keep city sampling explicit in `city_sets.py`; every generated dataset should be reproducible from CLI args plus the selected city list.
