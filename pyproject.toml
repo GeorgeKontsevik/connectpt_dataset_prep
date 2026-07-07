@@ -1,0 +1,12 @@
+[project]
+name = "connectpt-dataset-prep"
+version = "0.1.0"
+description = "Dataset preparation helpers for ConnectPT experiments."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+connectpt-dataset-prep = "connectpt_dataset_prep.cli:main"
+
+[tool.uv]
+package = true
