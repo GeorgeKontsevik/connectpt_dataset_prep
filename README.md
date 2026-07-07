@@ -12,9 +12,9 @@ flowchart LR
     BUILD --> OUT[ConnectPT-ready exports]
 ```
 
-## Main Image
+## Main Result
 
-![ConnectPT dataset preparation flow](docs/readme_project_map.svg)
+![ConnectPT dataset analysis](docs/readme_main_result.png)
 
 ## Run
 
@@ -30,7 +30,7 @@ Agent: check selected city set and output manifest before running a long build; 
 
 ## Publication
 
-No standalone publication; support repo for ConnectPT dissertation experiments.
+No standalone publication; support repo for ConnectPT dissertation experiments. Result image mirrors the downstream ConnectPT dataset analysis artifact.
 
 ## Next Steps / Heuristics
 
