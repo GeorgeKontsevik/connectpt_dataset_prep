@@ -18,3 +18,4 @@ venv/
 *~
 # --- /dissertation cookie-cutter ---
 
+.env
