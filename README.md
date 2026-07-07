@@ -1,5 +1,7 @@
 # connectpt_dataset_prep
 
+[![OSA-improved](https://img.shields.io/badge/improved%20by-OSA-yellow)](https://github.com/aimclub/OSA)
+
 Small dataset-builder wrapper for ConnectPT experiments. It selects city sets, runs controlled preparation jobs, and leaves outputs for downstream route-generation training/evaluation.
 
 ## System Map
@@ -35,3 +37,4 @@ No standalone publication; support repo for ConnectPT dissertation experiments. 
 ## Next Steps / Heuristics
 
 Heuristic: keep city sampling explicit in `city_sets.py`; every generated dataset should be reproducible from CLI args plus the selected city list.
+
